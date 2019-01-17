@@ -11,7 +11,7 @@
      spec:
        containers:
          - name: foobar
-           image: quay.io/metral/k8s-demo:0.0.1
+           image: quay.io/metral/k8s-demo:0.0.2
            imagePullPolicy: Always
            ports:
              - name: http
