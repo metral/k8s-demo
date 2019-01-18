@@ -19,7 +19,7 @@ static-build:
 	$(shell mkdir -p $(OUTPUT_PATH))
 	CGO_ENABLED=0 GOARCH=amd64 GOOS=linux go build -o $(OUTPUT_PATH)/$(APP_NAME) -a -installsuffix no_cgo -ldflags '-w -extld ld -extldflags -static' -x $(GO_PKG_PATH)
 
-docker-build:
+docker-build: static-build
 	docker build -t $(IMAGE) -f Dockerfile .  
 
 docker-push:
