@@ -1,4 +1,0 @@
-package: github.com/metral/k8s-demo
-import:
-- package: github.com/guregu/kami
-  version: ^2.2.0
