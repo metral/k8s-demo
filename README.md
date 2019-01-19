@@ -1,24 +1,29 @@
 ## k8s-demo
-A simple Go HTTP Server for Kubernetes demos.
+
+`k8s-demo` is a Kubernetes 'Hello World' app for demos.
+
+It is a simple Go HTTP Server that runs behind an NGINX Ingress Controller on Kubernetes.
 
 ### Build and Run 
 
 #### Build
+
 ```
-$ go build .
+$ make build
 ```
 
 #### Run
+
 ```
 $ ./k8s-demo
-$ curl http://127.0.0.1:8888/foobar
+$ curl http://127.0.0.1:8080/foobar
 ```
 
 ### Run on Kubernetes
 
-> Note: Port 30100 should be open in the security group of the externally accessible node. 
+> Note: If applicable, port 30100 should be open in the security group of the externally accessible node. 
 
 ```
-$ kubectl create -f k8s/ -R
-$ curl <EXTERNAL_IP>:30100/foobar
+$ kubectl create -f -R k8s/
+$ curl -v -H 'Host: apps.example.com' http://<K8S_NODE_IP_ADDR>:30100/foobar
 ```
