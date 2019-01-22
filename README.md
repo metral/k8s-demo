@@ -24,6 +24,6 @@ $ curl http://127.0.0.1:8080/foobar
 > Note: If applicable, port 30100 should be open in the security group of the externally accessible node. 
 
 ```
-$ kubectl create -f -R k8s/
+$ kubectl create -f k8s/ -R
 $ curl -v -H 'Host: apps.example.com' http://<K8S_NODE_IP_ADDR>:30100/foobar
 ```
