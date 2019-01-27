@@ -1,7 +1,7 @@
 default: build
 
 APP_NAME=k8s-demo
-TAG=0.0.3
+TAG=0.0.1
 IMAGE=quay.io/metral/${APP_NAME}:${TAG}
 
 # Go pkg path for app
